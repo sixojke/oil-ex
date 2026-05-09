@@ -1,0 +1,17 @@
+{
+  "setup": {
+    "max_oil_derricks": 2,
+    "limit_refineries": 2,
+    "limit_fuel_generators": 32,
+    "turbine_seal_durability": 10000,
+    "matter_eu_per_mb": 168350
+  },
+  "thresholds": {
+    "oil_chunks_per_region": { "red_low": 0.4, "yellow_low": 0.8, "yellow_high": 2.0, "red_high": 4.0 },
+    "lubricant_ratio":       { "red_low": 0.4, "yellow_low": 0.75, "yellow_high": 1.2, "red_high": 3.0 },
+    "fluid_remainder":       { "red_low": 1000, "yellow_low": 5000, "yellow_high": 16000, "red_high": 32000 },
+    "storage_ratio":         { "red_below": 1.0, "yellow_below": 2.0 },
+    "seals_per_hour":        { "yellow_above": 30, "red_above": 120 },
+    "limit_ratio":           { "yellow_factor": 1.5, "red_factor": 2.0 }
+  }
+}

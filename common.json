@@ -1,0 +1,191 @@
+{
+  "base": {
+    "crude_oil": {
+      "oil_chunk_chance": 0.01555,
+      "chunk_fluid_gen_min": 25,
+      "chunk_fluid_gen_max": 350
+    }
+  },
+  "items": {
+    "oil_scanner": {
+      "energy_storage": 1000000,
+      "energy_price_click": 15625,
+      "scan_cooldown_ticks": 20
+    }
+  },
+  "machine": {
+    "oil_derrick": {
+      "foundation_check_radius": 0,
+      "energy_storage": 100000,
+      "tank": 10000,
+      "cycle_tick": 20,
+      "energy_cost": 5120,
+      "sounds_list": {
+        "idle": "no_sound",
+        "active": "oil_derrick.active"
+      },
+	  "animation_list": {
+	    "idle": [
+	    	{ "name": "idle_1", "chance": 100 }
+	    ],
+	    "active": [
+	    	{ "name": "active_1", "chance": 100 }
+	    ]
+	  },
+      "render": {
+        "model_rotation_degrees": 0,
+        "model": "geo/blocks/machine/oil_derrick.geo.json",
+        "animation": "animations/blocks/machine/oil_derrick.animation.json",
+        "texture": "textures/blocks/machine/oil_derrick.png",
+        "item_type": {
+          "equipped_first_person": [1.0, 1.0, 1.0],
+          "equipped": [1.0, 1.0, 1.0],
+          "inventory": [0.3, 0.3, 0.3],
+          "entity": [2.0, 2.0, 2.0]
+        }
+      }
+    },
+    "oil_refinery": {
+      "tank": 8000,
+      "energy_storage": 1000000,
+		"recipes": [
+		  {
+			"id": "craft_fractions",
+			"energy_cost": 20480,
+			"cycle_tick": 80,
+			"input": [
+			  { "fluid": "crude_oil", "amount": 1000 }
+			],
+			"output": [
+			  { "fluid": "gasoline", "amount": 300 },
+			  { "fluid": "fuel_oil", "amount": 400 },
+			  { "fluid": "bitumen", "amount": 200 }
+			]
+		  },
+		  {
+			"id": "craft_lubricant",
+			"energy_cost": 102400,
+			"cycle_tick": 400,
+			"input": [
+			  { "fluid": "fuel_oil", "amount": 200 }
+			],
+			"output": [
+			  { "fluid": "lubricant", "amount": 25 },
+			  { "fluid": "bitumen", "amount": 150 }
+			]
+		  },
+		  {
+			"id": "craft_lubricant_advanced",
+			"energy_cost": 256000,
+			"cycle_tick": 500,
+			"input": [
+			  { "fluid": "bitumen", "amount": 100 },
+			  { "fluid": "fuel_oil", "amount": 100 }
+			],
+			"output": [
+			  { "fluid": "lubricant", "amount": 25 },
+			  { "fluid": "fuel_oil", "amount": 75 }
+			]
+		  }
+		],
+      "sounds_list": {
+        "active": "oil_refinery.active"
+      },
+	  "animation_list": {
+	    "idle": [
+	    	{ "name": "idle_1", "chance": 100 }
+	    ],
+	    "active": [
+	    	{ "name": "active_1", "chance": 100 }
+	    ]
+	  },
+      "render": {
+        "model_rotation_degrees": 0,
+        "model": "geo/blocks/machine/oil_refinery.geo.json",
+        "animation": "animations/blocks/machine/oil_refinery.animation.json",
+        "texture": "textures/blocks/machine/oil_refinery.png",
+        "item_type": {
+          "equipped_first_person": [1.0, 1.0, 1.0],
+          "equipped": [1.0, 1.0, 1.0],
+          "inventory": [0.7, 0.7, 0.7],
+          "entity": [1.0, 1.0, 1.0]
+        }
+      }
+    },
+    "oil_generator": {
+      "tank": 2000,
+      "energy_storage": 100000,
+      "max_output_eu": 1024,
+      "cycle_tick": 20,
+      "upgrade_id": "craftitems:turbine_seal",
+      "upgrade_boost": 100,
+      "upgrade_durability_cycle": 1,
+	  "fuels": {
+		"gasoline": {
+		  "amount": 4,
+		  "energy": 10240
+		},
+		"fuel_oil": {
+		  "amount": 4,
+		  "energy": 6144
+		}
+	  },
+      "sounds_list": {
+        "active": "oil_generator.active"
+      },
+	  "animation_list": {
+	    "idle": [
+	    	{ "name": "idle_1", "chance": 100 }
+	    ],
+	    "active": [
+	    	{ "name": "active_1", "chance": 100 }
+	    ]
+	  },
+      "render": {
+        "model_rotation_degrees": 0,
+        "model": "geo/blocks/machine/oil_generator.geo.json",
+        "animation": "animations/blocks/machine/oil_generator.animation.json",
+        "texture": "textures/blocks/machine/oil_generator.png",
+        "item_type": {
+          "equipped_first_person": [1.0, 1.0, 1.0],
+          "equipped": [1.0, 1.0, 1.0],
+          "inventory": [1.0, 1.0, 1.0],
+          "entity": [1.0, 1.0, 1.0]
+        }
+      }
+    },
+    "ult_assembler": {
+      "hologram_item": 31,
+      "tank": 50000,
+      "energy_storage": 100000000,
+      "upgrade_liquid": "lubricant",
+      "upgrade_boost_cycle": 25,
+      "upgrade_boost_eu": 20,
+      "upgrade_price_ticks": 0.075,
+      "sounds_list": {
+        "idle": "no_sound",
+        "active": "ult_assembler.active"
+      },
+	  "animation_list": {
+	    "idle": [
+	    	{ "name": "idle_1", "chance": 100 }
+	    ],
+	    "active": [
+	    	{ "name": "active_1", "chance": 100 }
+	    ]
+	  },
+      "render": {
+        "model_rotation_degrees": 180,
+        "model": "geo/blocks/machine/ult_assembler.geo.json",
+        "animation": "animations/blocks/machine/ult_assembler.animation.json",
+        "texture": "textures/blocks/machine/ult_assembler.png",
+        "item_type": {
+          "equipped_first_person": [0.5, 0.5, 0.5],
+          "equipped": [0.5, 0.5, 0.5],
+          "inventory": [0.24, 0.24, 0.24],
+          "entity": [1.2, 1.2, 1.2]
+        }
+      }
+    }
+  }
+}
