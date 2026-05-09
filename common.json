@@ -1,5 +1,6 @@
 {
   "base": {
+    "debug_automation": false,
     "crude_oil": {
       "oil_chunk_chance": 0.01555,
       "chunk_fluid_gen_min": 25,
