@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"os"
 	"sort"
 	"strings"
@@ -622,7 +623,9 @@ func colorByZoneFactor(value, limit float64, z ZoneFactor, raw string) string {
 func printLubricantAnalysis(cfg Config) {
 	a := cfg.Machine.UltAssembler
 
-	consumePerTick := a.UpgradePriceTicks
+	// Игра обрезает расход за тик до целого (floor). Дробные значения < 1
+	// дают 0 mB/тик → смазка не тратится вообще.
+	consumePerTick := math.Floor(a.UpgradePriceTicks)
 	consumePerSec := consumePerTick * 20
 	consumePerMin := consumePerSec * 60
 	tankRuntimeSec := 0.0
@@ -632,8 +635,12 @@ func printLubricantAnalysis(cfg Config) {
 
 	fmt.Println("══════════════ Анализ выработки смазки ══════════════")
 	fmt.Println("Под смазку выделен 1 НПЗ (планово 2 НПЗ под фракции/генераторы).")
-	fmt.Printf("Сборщик: бак %d mB, upgrade_price_ticks=%.1f → расход %.1f mB/t = %.0f mB/сек = %.0f mB/мин\n",
+	fmt.Printf("Сборщик: бак %d mB, upgrade_price_ticks=%.3g → расход floor = %.0f mB/t = %.0f mB/сек = %.0f mB/мин\n",
 		a.Tank, a.UpgradePriceTicks, consumePerTick, consumePerSec, consumePerMin)
+	if a.UpgradePriceTicks > 0 && consumePerTick == 0 {
+		fmt.Printf("  %s upgrade_price_ticks < 1 → игра обрежет до 0, смазка тратиться не будет!\n",
+			ansiRed+"⚠"+ansiReset)
+	}
 	fmt.Printf("Полный бак сборщика при непрерывной нагрузке: %s\n", formatTime(tankRuntimeSec))
 	fmt.Println()
 

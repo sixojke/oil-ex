@@ -64,27 +64,27 @@
 		  },
 		  {
 			"id": "craft_lubricant",
-			"energy_cost": 102400,
-			"cycle_tick": 400,
+			"energy_cost": 51200,
+			"cycle_tick": 200,
 			"input": [
-			  { "fluid": "fuel_oil", "amount": 200 }
+			  { "fluid": "fuel_oil", "amount": 1000 }
 			],
 			"output": [
-			  { "fluid": "lubricant", "amount": 25 },
-			  { "fluid": "bitumen", "amount": 150 }
+			  { "fluid": "lubricant", "amount": 150 },
+			  { "fluid": "bitumen", "amount": 750 }
 			]
 		  },
 		  {
 			"id": "craft_lubricant_advanced",
-			"energy_cost": 256000,
-			"cycle_tick": 500,
+			"energy_cost": 204800,
+			"cycle_tick": 400,
 			"input": [
-			  { "fluid": "bitumen", "amount": 100 },
-			  { "fluid": "fuel_oil", "amount": 100 }
+			  { "fluid": "bitumen", "amount": 1000 },
+			  { "fluid": "fuel_oil", "amount": 1000 }
 			],
 			"output": [
-			  { "fluid": "lubricant", "amount": 25 },
-			  { "fluid": "fuel_oil", "amount": 75 }
+			  { "fluid": "lubricant", "amount": 275 },
+			  { "fluid": "fuel_oil", "amount": 800 }
 			]
 		  }
 		],
@@ -161,7 +161,7 @@
       "upgrade_liquid": "lubricant",
       "upgrade_boost_cycle": 25,
       "upgrade_boost_eu": 20,
-      "upgrade_price_ticks": 0.075,
+      "upgrade_price_ticks": 1,
       "sounds_list": {
         "idle": "no_sound",
         "active": "ult_assembler.active"
