@@ -535,15 +535,16 @@ func printChunkAnalysis(cfg Config) {
 	chance := cfg.Base.CrudeOil.OilChunkChance
 	expected := float64(ChunksPerRegion) * chance
 
+	z := thresholds.OilChunksPerRegion
 	verdict := ""
 	switch {
-	case expected < 0.4:
+	case expected < z.RedLow:
 		verdict = "🔴 нефти почти нет"
-	case expected < 0.8:
+	case expected < z.YellowLow:
 		verdict = "🟡 нефти маловато"
-	case expected <= 2.0:
+	case expected <= z.YellowHigh:
 		verdict = "🟢 нормальная плотность"
-	case expected <= 4.0:
+	case expected <= z.RedHigh:
 		verdict = "🟡 нефти многовато"
 	default:
 		verdict = "🔴 нефти слишком много"

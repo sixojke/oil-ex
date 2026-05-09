@@ -7,8 +7,8 @@
     "matter_eu_per_mb": 168350
   },
   "thresholds": {
-    "oil_chunks_per_region": { "red_low": 0.4, "yellow_low": 0.8, "yellow_high": 2.0, "red_high": 4.0 },
-    "lubricant_ratio":       { "red_low": 0.4, "yellow_low": 0.75, "yellow_high": 1.2, "red_high": 3.0 },
+    "oil_chunks_per_region": { "red_low": 0.8, "yellow_low": 1.5, "yellow_high": 2.5, "red_high": 3.2 },
+    "lubricant_ratio":       { "red_low": 0.35, "yellow_low": 0.5, "yellow_high": 0.9, "red_high": 1.2 },
     "fluid_remainder":       { "red_low": 1000, "yellow_low": 5000, "yellow_high": 16000, "red_high": 32000 },
     "storage_ratio":         { "red_below": 1.0, "yellow_below": 2.0 },
     "seals_per_hour":        { "yellow_above": 30, "red_above": 120 },

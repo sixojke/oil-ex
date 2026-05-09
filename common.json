@@ -2,7 +2,7 @@
   "base": {
     "debug_automation": false,
     "crude_oil": {
-      "oil_chunk_chance": 0.01555,
+      "oil_chunk_chance": 0.035,
       "chunk_fluid_gen_min": 25,
       "chunk_fluid_gen_max": 350
     }
@@ -71,8 +71,8 @@
 			  { "fluid": "fuel_oil", "amount": 1000 }
 			],
 			"output": [
-			  { "fluid": "lubricant", "amount": 150 },
-			  { "fluid": "bitumen", "amount": 750 }
+			  { "fluid": "lubricant", "amount": 125 },
+			  { "fluid": "bitumen", "amount": 500 }
 			]
 		  },
 		  {
@@ -84,7 +84,7 @@
 			  { "fluid": "fuel_oil", "amount": 1000 }
 			],
 			"output": [
-			  { "fluid": "lubricant", "amount": 275 },
+			  { "fluid": "lubricant", "amount": 200 },
 			  { "fluid": "fuel_oil", "amount": 800 }
 			]
 		  }
